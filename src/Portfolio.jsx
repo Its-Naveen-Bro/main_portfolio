@@ -134,6 +134,7 @@ const Portfolio = () => {
               { icon: 'fab fa-react', name: 'React' },
               { icon: 'fas fa-pencil-ruler', name: 'Figma' },
               { icon: 'fas fa-gamepad', name: 'Unreal Engine(Blueprint)' },
+              { icon: 'fas fa-cube', name: 'Unity Engine' },
               { icon: 'fas fa-vr-cardboard', name: 'AR / VR' }
               
             
