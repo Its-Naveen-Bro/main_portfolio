@@ -84,9 +84,12 @@ const Portfolio = () => {
             <div className="aboutText">
               <h3>Frontend Developer & Game Creator</h3>
               <p>I am a passionate web and game developer who loves creating experiences that feel smooth and intuitive. My recent work includes THE UNSEEN, a thrilling survival horror game built in Unreal Engine 5, and a complete redesign of my college's ERP website to make it user-friendly. I am also diving into AR and VR, building immersive worlds and interactive web experiences that push boundaries.</p>
+               <a href="NAVEEN OCT.pdf" className="btn btnSecondary">
+                <i className="fas fa-eye"></i>View Resume</a>
             </div>
           </div>
         </div>
+
       </section>
 
       <section id="education" className="educationSection">
