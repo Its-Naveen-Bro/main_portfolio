@@ -66,7 +66,7 @@ const Portfolio = () => {
           </div>
           <div className="heroImage">
             <div className="imageBorder">
-              <img src="342.jpg" alt="Profile" className="profilePic" />
+              <img src="img1.jpg" alt="Profile" className="profilePic" />
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ const Portfolio = () => {
           <div className="aboutContent">
             <div className="aboutImageBox">
               <div className="imageBorder">
-                <img src="img1.jpg" alt="About" className="aboutPic" />
+                <img src="342.jpg" alt="About" className="aboutPic" />
               </div>
             </div>
             <div className="aboutText">
