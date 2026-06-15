@@ -1,5 +1,128 @@
 import React, { useState } from 'react';
 
+
+const navItems = ['home', 'about', 'education', 'skills', 'competitions', 'projects', 'design-projects', 'contact'];
+
+const educationData = [
+  {
+    title: 'Bachelor Degree - Computer Science and Design',
+    institution: 'Rajalakshmi Engineering College | 2023 - 2026',
+    description: 'Currently studying how to bring ideas to life through code and game design. Learning how creativity and problem-solving work together to create amazing digital products.'
+  },
+  {
+    title: 'Diploma - Mechanical Engineering (Tool & Die)',
+    institution: 'PSV Polytechnic College | 2019 - 2022',
+    description: 'Studied mechanical design and fell in love with AutoCAD. This is where I first realized I loved turning ideas into precise, working designs.'
+  },
+  {
+    title: 'Secondary School Leaving Certificate',
+    institution: 'Infant Jesus Matriculation School | 2019',
+    description: 'High school years filled with art and drawing. This early passion for visual creativity sparked my journey into design and everything I do today.'
+  }
+];
+
+const skillsData = [
+  { icon: 'fab fa-html5', name: 'HTML' },
+  { icon: 'fab fa-css3-alt', name: 'CSS' },
+  { icon: 'fab fa-js-square', name: 'JavaScript' },
+  { icon: 'fab fa-react', name: 'React.js' },
+  { icon: 'fas fa-code', name: 'Next.js' },
+  { icon: 'fab fa-figma', name: 'Figma' },
+  { icon: 'fas fa-database', name: 'SQL' },
+  { icon: 'fab fa-uikit', name: 'Unreal Engine (Blueprint)' },
+  { icon: 'fab fa-unity', name: 'Unity Engine' },
+  { icon: 'fas fa-vr-cardboard', name: 'AR / VR' }
+];
+
+const competitionsData = [
+  {
+    title: 'Smart India Hackathon 2025 (SIH)',
+    category: 'National Level Competition',
+    description: 'I successfully participated in the SIH 2025, a 30-hour internal hackathon. The experience allowed me to collaborate with teammates Rahul S, Rithika H, Abinauv R, THEJESH NS, and Rishi RL, explore creative ideas, and work on real-world problem statements. It was an exciting opportunity to learn, innovate, and strengthen my teamwork and problem-solving skills.',
+    achievements: ['Problem Solving', 'Team Collaboration', 'Innovation', 'Technical Implementation'],
+    year: '2025',
+    image: 'sih.jpg'
+  }
+];
+
+const techProjectsData = [
+  {
+    title: 'Zyren : Agency Website',
+    description: 'Developed a professional agency website with Next.js focusing on speed and scalability. Designed clean layouts with responsive design and optimized performance.',
+    tech: ['Next.js', 'HTML', 'CSS', 'JavaScript'],
+    image: 'ZYREN.png',
+    buttons: [
+      { label: 'View Website', link: 'https://agency-inky-omega.vercel.app/' },
+      { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/Weboin_task'}
+    ]
+  },
+  {
+    title: 'Zyren International Journal of Publication Website',
+    description: 'ZIJP (Zyren International Journal of Publications) is a platform for publishing high-quality research papers and academic articles across various disciplines. It supports researchers and scholars in sharing knowledge, promoting innovation, and advancing academic excellence worldwide.',
+    tech: ['React.js', 'Node.js', 'HTML', 'CSS', 'JavaScript'],
+    image: 'Zyrenpaper.png',
+    buttons: [
+      { label: 'View Website', link: 'https://journalwebsite-alpha.vercel.app/' },
+      { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/ZIJP_Journal_Website.git'}
+    ]
+  },
+  {
+    title: 'College ERP : UI/UX Redesign & Website Development',
+    description: 'Completely transformed the college ERP website with a fresh, modern design. I researched what users actually needed and built something that is easy to navigate and beautiful to look at.',
+    tech: ['Figma', 'Prototyping', 'Visual Studio Code', 'HTML/CSS', 'JavaScript'],
+    image: 'ERP_LOGIN.png',
+    buttons: [
+      { label: 'View Prototype', link: 'https://embed.figma.com/proto/ONnfBktmYnnqPLLz49TyoX/Login-v0.1?node-id=1-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share' },
+      { label: 'View Demo', link: 'https://drive.google.com/file/d/129U5tjGaDi2nOhNGJLuJHV_l9g77s1NM/view?usp=drive_link' },
+      { label: 'Case Study', link: 'ERP.pdf' },
+      { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/ERPWebsite' }
+    ]
+  },
+  {
+    title: 'OneForAll : E-commerce Website',
+    description: 'OneForAll is a modern e-commerce web application built with React, offering electronics, fashion, and food products in one place.',
+    tech: ['React', 'Visual Studio Code', 'HTML/CSS', 'JavaScript'],
+    image: 'OneForAll.png',
+    buttons: [
+      { label: 'View Website', link: 'https://oneforall01.netlify.app' },
+      { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/OneForAll-shopping-website' }
+    ]
+  }
+];
+
+const designProjectsData = [
+  {
+    title: 'THE UNSEEN',
+    description: 'An intense survival horror game where you\'re lost in a dark forest, trying to escape while mysterious creatures hunt you down. Built with Unreal Engine 5, featuring stunning graphics and spine-chilling sound design.',
+    tech: ['Unreal Engine 5', 'Blueprints', '3D Modeling'],
+    image: 'unseen.jpg',
+    buttons: [
+      { label: 'View Demo', link: 'https://drive.google.com/file/d/1SmLSgsFAGFX7YuVASbWWzcXK8i8TFYz7/view?usp=drive_link' },
+      { label: 'Case Study', link: 'THE UNSEEN REPORT.pdf' }
+    ]
+  },
+  {
+    title: 'Augmented & Virtual Reality Experiences',
+    description: 'Created interactive AR and VR experiences in Unity where users can interact with 3D models in real-time. These projects showcase how immersive technology can create engaging user experiences.',
+    tech: ['Unity Engine 6', 'XR ToolKits'],
+    image: 'arvr.jpg',
+    buttons: [
+      { label: 'View Demo', link: 'https://drive.google.com/drive/folders/1D4HcNHi6Wz0g37ye3d-UtGU-UCGbHm6I?usp=sharing' },
+      { label: 'Case Study', link: 'AR VR report.pdf' }
+    ]
+  },
+  {
+    title: 'Quick Save : VR Based Disaster Rescue and Preparedness Simulator',
+    description: 'Quick Save is a VR-based disaster rescue and preparedness simulator that allows users to experience emergency scenarios in an immersive virtual environment. It helps users learn rescue techniques, safety procedures, and decision-making skills during disaster situations.',
+    tech: ['Unreal Engine 5.5', 'Meta XR Simulator', 'Blueprints'],
+    image: 'VR.png',
+    buttons: [
+      { label: 'Source File', link: 'https://drive.google.com/drive/folders/1ItSUdISG6GWYW-nPMiaB9jymUI0w7D1t?usp=drive_link' },
+      { label: 'Case Study', link: 'Quick Save.pdf' }
+    ]
+  }
+];
+
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,14 +145,17 @@ const Portfolio = () => {
           <nav className="navigationBar">
             <div className="brandName">Naveen S</div>
             <ul className={`menuItems ${menuOpen ? 'active' : ''}`}>
-              {['home', 'about', 'education', 'skills', 'competitions', 'projects', 'contact'].map(item => (
+              {navItems.map(item => (
                 <li key={item}>
                   <a 
                     href={`#${item}`}
                     className={activeSection === item ? 'active' : ''}
                     onClick={(e) => { e.preventDefault(); scrollToSection(item); }}
                   >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                    {item.includes('-') 
+                      ? item.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+                      : item.charAt(0).toUpperCase() + item.slice(1)
+                    }
                   </a>
                 </li>
               ))}
@@ -42,11 +168,16 @@ const Portfolio = () => {
       </header>
 
       <section id="home" className="heroSection">
+        <video autoPlay loop muted playsInline className="heroVideoBackground">
+          <source src="vid3.mp4" type="video/mp4" />
+        </video>
+        <div className="heroVideoOverlay"></div>
+
         <div className="wrapper heroContent">
           <div className="heroText">
             <h1>Hey, I'm <span className="accentColor">Naveen S</span></h1>
-            <h2>Frontend Developer & Game Creator</h2>
-            <p>I build beautiful websites and exciting games that people actually easy to use. My passion is turning creative ideas into real, working products that make a difference.</p>
+            <h2>Full Stack Developer & Game Creator</h2>
+            <p>I build beautiful websites and exciting games that people actually find easy to use. My passion is turning creative ideas into real, working products that make a difference.</p>
             <div className="actionButtons">
               <a href="#contact" className="btn btnPrimary" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
                 <i className="fas fa-paper-plane"></i>Hire Me
@@ -82,9 +213,9 @@ const Portfolio = () => {
               </div>
             </div>
             <div className="aboutText">
-              <h3>Frontend Developer & Game Creator</h3>
+              <h3>Full Stack Developer & Game Creator</h3>
               <p>I am a passionate web and game developer who loves creating experiences that feel smooth and intuitive. My recent work includes THE UNSEEN, a thrilling survival horror game built in Unreal Engine 5, and a complete redesign of my college's ERP website to make it user-friendly. I am also diving into AR and VR, building immersive worlds and interactive web experiences that push boundaries.</p>
-               <a href="Resume.pdf" className="btn btnSecondary">
+               <a href="NAVEEN.S.pdf" className="btn btnSecondary">
                 <i className="fas fa-eye"></i>View Resume</a>
             </div>
           </div>
@@ -95,23 +226,7 @@ const Portfolio = () => {
         <div className="wrapper">
           <h2 className="sectionTitle centerTitle">My <span>Education</span></h2>
           <div className="timelineBox">
-            {[
-              {
-                title: 'Bachelor Degree - Computer Science and Design',
-                institution: 'Rajalakshmi Engineering College | 2023 - 2026',
-                description: 'Currently studying how to bring ideas to life through code and game design. Learning how creativity and problem-solving work together to create amazing digital products.'
-              },
-              {
-                title: 'Diploma - Mechanical Engineering (Tool & Die)',
-                institution: 'PSV Polytechnic College | 2019 - 2022',
-                description: 'Studied mechanical design and fell in love with AutoCAD. This is where I first realized I loved turning ideas into precise, working designs.'
-              },
-              {
-                title: 'Secondary School Leaving Certificate',
-                institution: 'Infant Jesus Matriculation School | 2019',
-                description: 'High school years filled with art and drawing. This early passion for visual creativity sparked my journey into design and everything I do today.'
-              }
-            ].map((edu, index) => (
+            {educationData.map((edu, index) => (
               <div key={index} className="timelineStep">
                 <div className="timelineMark"></div>
                 <div className="timelineInfo">
@@ -129,17 +244,7 @@ const Portfolio = () => {
         <div className="wrapper">
           <h2 className="sectionTitle centerTitle">My <span>Skills</span></h2>
           <div className="skillsDisplay">
-            {[
-              { icon: 'fab fa-html5', name: 'HTML' },
-              { icon: 'fab fa-css3-alt', name: 'CSS' },
-              { icon: 'fab fa-js-square', name: 'JavaScript' },
-              { icon: 'fab fa-react', name: 'React' },
-              { icon: 'fab fa-figma', name: 'Figma' },
-              { icon: 'fas fa-database', name: 'SQL' },
-              { icon: 'fab fa-uikit', name: 'Unreal Engine (Blueprint)' },
-              { icon: 'fab fa-unity', name: 'Unity Engine' },
-              { icon: 'fas fa-vr-cardboard', name: 'AR / VR' }
-            ].map((skill, index) => (
+            {skillsData.map((skill, index) => (
               <div key={index} className="skillBox">
                 <i className={skill.icon}></i>
                 <span>{skill.name}</span>
@@ -153,16 +258,7 @@ const Portfolio = () => {
         <div className="wrapper">
           <h2 className="sectionTitle centerTitle">Competitions & <span>Achievements</span></h2>
           <div className="competitionsList">
-            {[
-              {
-                title: 'Smart India Hackathon 2025 (SIH)',
-                category: 'National Level Competition',
-                description: 'I successfully participated in the SIH 2025, a 30-hour internal hackathon. The experience allowed me to collaborate with teammates Rahul S, Rithika H, Abinauv R, THEJESH NS, and Rishi RL, explore creative ideas, and work on real-world problem statements. It was an exciting opportunity to learn, innovate, and strengthen my teamwork and problem-solving skills.',
-                achievements: ['Problem Solving', 'Team Collaboration', 'Innovation', 'Technical Implementation'],
-                year: '2025',
-                image: 'sih.jpg'
-              }
-            ].map((competition, index) => (
+            {competitionsData.map((competition, index) => (
               <div key={index} className="competitionCard">
                 <div className="competitionImageBox">
                   <img src={competition.image} alt={competition.title} className="competitionImage" />
@@ -171,7 +267,6 @@ const Portfolio = () => {
                 <div className="competitionContent">
                   <div className="competitionHeader">
                     <h3>{competition.title}</h3>
-                    
                   </div>
                   <h4 className="competitionCategory">{competition.category}</h4>
                   <p>{competition.description}</p>
@@ -193,50 +288,7 @@ const Portfolio = () => {
         <div className="wrapper">
           <h2 className="sectionTitle centerTitle">My <span>Projects</span></h2>
           <div className="projectsList">
-            {[
-              {
-                title: 'THE UNSEEN',
-                description: 'An intense survival horror game where your lost in a dark forest, trying to escape while mysterious creatures hunt you down. Built with Unreal Engine 5, featuring stunning graphics and spine-chilling sound design.',
-                tech: ['Unreal Engine 5', 'Blueprints', '3D Modeling'],
-                image: 'unseen.jpg',
-                buttons: [
-                  { label: 'View Demo', link: 'https://drive.google.com/file/d/1SmLSgsFAGFX7YuVASbWWzcXK8i8TFYz7/view?usp=drive_link' },
-                  { label: 'Case Study', link: 'THE UNSEEN REPORT.pdf' }
-                ]
-              },
-              {
-                title: 'College ERP :UI/UX Redesign & Website Development',
-                description: 'Completely transformed the college ERP website with a fresh, modern design. I researched what users actually needed and built something that easy to navigate and beautiful to look at.',
-                tech: ['Figma', 'Prototyping', 'Visual Studio Code', 'HTML/CSS', 'JavaScript'],
-                image: 'ERP_LOGIN.png',
-                buttons: [
-                  { label: 'View Prototype', link: 'https://embed.figma.com/proto/ONnfBktmYnnqPLLz49TyoX/Login-v0.1?node-id=1-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share' },
-                  { label: 'View Demo', link: 'https://drive.google.com/file/d/129U5tjGaDi2nOhNGJLuJHV_l9g77s1NM/view?usp=drive_link' },
-                  { label: 'Case Study', link: 'ERP.pdf' },
-                  { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/ERPWebsite' }
-                ]
-              },
-              {
-                title: 'OneForAll: E-commerce Website',
-                description: 'OneForAll is a modern e-commerce web application built with React, offering electronics, fashion, and food products in one place.',
-                tech: ['React', 'Visual Studio Code', 'HTML/CSS', 'JavaScript'],
-                image: 'OneForAll.png',
-                buttons: [
-                  { label: 'View Website', link: 'https://oneforall01.netlify.app' },
-                  { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/OneForAll-shopping-website' }
-                ]
-              },
-              {
-                title: 'Augmented & Virtual Reality Experiences',
-                description: 'Created interactive AR and VR experiences in Unity where users can interact with 3D models in real-time. These projects showcase how immersive technology can create engaging user experiences.',
-                tech: ['Unity Engine 6', 'XR ToolKits'],
-                image: 'arvr.jpg',
-                buttons: [
-                  { label: 'View Demo', link: 'https://drive.google.com/drive/folders/1D4HcNHi6Wz0g37ye3d-UtGU-UCGbHm6I?usp=sharing' },
-                  { label: 'Case Study', link: 'AR VR report.pdf' }
-                ]
-              }
-            ].map((project, index) => (
+            {techProjectsData.map((project, index) => (
               <div key={index} className="projectCard">
                 <div className="projectImage">
                   <img src={project.image} alt={project.title} className="projectPic" />
@@ -252,7 +304,39 @@ const Portfolio = () => {
                   <div className="projectLinks">
                     {project.buttons.map((btn, i) => (
                       <a key={i} href={btn.link} className="linkButton" title={btn.label}>
-                        <i className={btn.icon}></i>
+                        {btn.icon && <i className={btn.icon}></i>}
+                        {btn.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <section id="design-projects" className="projectsSection">
+        <div className="wrapper">
+          <h2 className="sectionTitle centerTitle">Design <span>Projects</span></h2>
+          <div className="projectsList">
+            {designProjectsData.map((project, index) => (
+              <div key={index} className="projectCard">
+                <div className="projectImage">
+                  <img src={project.image} alt={project.title} className="projectPic" />
+                </div>
+                <div className="projectDetails">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="techTags">
+                    {project.tech.map((tech, i) => (
+                      <span key={i}>{tech}</span>
+                    ))}
+                  </div>
+                  <div className="projectLinks">
+                    {project.buttons.map((btn, i) => (
+                      <a key={i} href={btn.link} className="linkButton" title={btn.label}>
+                        {btn.icon && <i className={btn.icon}></i>}
                         {btn.label}
                       </a>
                     ))}
@@ -299,7 +383,7 @@ const Portfolio = () => {
             <i className="fas fa-arrow-up"></i>
           </a>
         </div>
-      </footer>
+      </footer >
 
       <style>{`
         html, body {
@@ -407,6 +491,30 @@ const Portfolio = () => {
           padding-top: 100px;
           position: relative;
           z-index: 1;
+          overflow: hidden;
+        }
+
+        .heroVideoBackground {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          z-index: -2;
+          transform: translate(-50%, -50%);
+          object-fit: cover;
+        }
+
+        .heroVideoOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(13, 17, 23, 0.7);
+          z-index: -1;
         }
 
         .heroContent {
@@ -739,22 +847,6 @@ const Portfolio = () => {
           object-fit: cover;
         }
 
-        .competitionIcon {
-          flex: 0 0 80px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 80px;
-          height: 80px;
-          background: rgba(0, 229, 255, 0.1);
-          border-radius: 12px;
-        }
-
-        .competitionIcon i {
-          font-size: 2.5rem;
-          color: #00e5ff;
-        }
-
         .competitionContent {
           flex: 1;
         }
@@ -771,16 +863,6 @@ const Portfolio = () => {
           font-size: 1.5rem;
           color: #00e5ff;
           margin: 0;
-        }
-
-        .competitionYear {
-          background: #00e5ff;
-          color: #000;
-          padding: 5px 15px;
-          border-radius: 20px;
-          font-weight: 600;
-          font-size: 0.9rem;
-          white-space: nowrap;
         }
 
         .competitionCategory {
@@ -914,10 +996,6 @@ const Portfolio = () => {
           background: #00bcd4;
           transform: translateY(-2px);
           box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
-        }
-
-        .linkButton i {
-          font-size: 0.9rem;
         }
 
         .contactSection {
