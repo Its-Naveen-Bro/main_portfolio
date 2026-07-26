@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './Portfolio.css'; 
 
 const navItems = ['home', 'about', 'education', 'skills', 'competitions', 'projects', 'design-projects', 'contact'];
 
@@ -25,20 +25,23 @@ const skillsData = [
   { icon: 'fab fa-html5', name: 'HTML' },
   { icon: 'fab fa-css3-alt', name: 'CSS' },
   { icon: 'fab fa-js-square', name: 'JavaScript' },
+  { icon: 'fab fa-java', name: 'Java' },
   { icon: 'fab fa-react', name: 'React.js' },
   { icon: 'fas fa-code', name: 'Next.js' },
   { icon: 'fab fa-figma', name: 'Figma' },
   { icon: 'fas fa-database', name: 'SQL' },
-  { icon: 'fab fa-uikit', name: 'Unreal Engine (Blueprint)' },
+  { icon: 'fab fa-uikit', name: 'Unreal Engine' },
   { icon: 'fab fa-unity', name: 'Unity Engine' },
-  { icon: 'fas fa-vr-cardboard', name: 'AR / VR' }
+  { icon: 'fas fa-vr-cardboard', name: 'AR / VR' },
+  { icon: 'fab fa-microsoft', name: 'Microsoft Office' },
+  { icon: 'fas fa-vial', name: 'Manual Testing | Functional Testing | Regression Testing' }
 ];
 
 const competitionsData = [
   {
     title: 'Smart India Hackathon 2025 (SIH)',
     category: 'National Level Competition',
-    description: 'I successfully participated in the SIH 2025, a 30-hour internal hackathon. The experience allowed me to collaborate with teammates Rahul S, Rithika H, Abinauv R, THEJESH NS, and Rishi RL, explore creative ideas, and work on real-world problem statements. It was an exciting opportunity to learn, innovate, and strengthen my teamwork and problem-solving skills.',
+    description: 'I successfully participated in the SIH 2025, a 30-hour internal hackathon. The experience allowed me to collaborate with teammates, explore creative ideas, and work on real-world problem statements. It was an exciting opportunity to learn, innovate, and strengthen my teamwork and problem-solving skills.',
     achievements: ['Problem Solving', 'Team Collaboration', 'Innovation', 'Technical Implementation'],
     year: '2025',
     image: 'sih.jpg'
@@ -57,8 +60,8 @@ const techProjectsData = [
     ]
   },
   {
-    title: 'Zyren International Journal of Publication Website',
-    description: 'ZIJP (Zyren International Journal of Publications) is a platform for publishing high-quality research papers and academic articles across various disciplines. It supports researchers and scholars in sharing knowledge, promoting innovation, and advancing academic excellence worldwide.',
+    title: 'Zyren International Journal of Publication',
+    description: 'ZIJP is a platform for publishing high-quality research papers and academic articles across various disciplines.',
     tech: ['React.js', 'Node.js', 'HTML', 'CSS', 'JavaScript'],
     image: 'Zyrenpaper.png',
     buttons: [
@@ -67,14 +70,13 @@ const techProjectsData = [
     ]
   },
   {
-    title: 'College ERP : UI/UX Redesign & Website Development',
-    description: 'Completely transformed the college ERP website with a fresh, modern design. I researched what users actually needed and built something that is easy to navigate and beautiful to look at.',
-    tech: ['Figma', 'Prototyping', 'Visual Studio Code', 'HTML/CSS', 'JavaScript'],
+    title: 'College ERP : UI/UX Redesign',
+    description: 'Completely transformed the college ERP website with a fresh, modern design. I researched what users actually needed and built something that is easy to navigate.',
+    tech: ['Figma', 'Prototyping', 'HTML/CSS', 'JavaScript'],
     image: 'ERP_LOGIN.png',
     buttons: [
-      { label: 'View Prototype', link: 'https://embed.figma.com/proto/ONnfBktmYnnqPLLz49TyoX/Login-v0.1?node-id=1-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share' },
+      { label: 'View Prototype', link: 'https://embed.figma.com/proto/ONnfBktmYnnqPLLz49TyoX/' },
       { label: 'View Demo', link: 'https://drive.google.com/file/d/129U5tjGaDi2nOhNGJLuJHV_l9g77s1NM/view?usp=drive_link' },
-      { label: 'Case Study', link: 'ERP.pdf' },
       { label: 'Github Link', link: 'https://github.com/Its-Naveen-Bro/ERPWebsite' }
     ]
   },
@@ -93,7 +95,7 @@ const techProjectsData = [
 const designProjectsData = [
   {
     title: 'THE UNSEEN',
-    description: 'An intense survival horror game where you\'re lost in a dark forest, trying to escape while mysterious creatures hunt you down. Built with Unreal Engine 5, featuring stunning graphics and spine-chilling sound design.',
+    description: 'An intense survival horror game where you\'re lost in a dark forest, trying to escape while mysterious creatures hunt you down. Built with Unreal Engine 5.',
     tech: ['Unreal Engine 5', 'Blueprints', '3D Modeling'],
     image: 'unseen.jpg',
     buttons: [
@@ -102,22 +104,31 @@ const designProjectsData = [
     ]
   },
   {
+    title: 'Job Tracking Application',
+    description: 'Designed a simple and easy-to-use Job Tracking Application in Figma that helps users keep track of their job applications in one place.',
+    tech: ['Figma', 'Prototyping', 'UI/UX Design'],
+    image: 'job.png',
+    buttons: [
+      { label: 'Prototype', link: 'https://www.figma.com/proto/PlfMwSOM5ZyS8gi1NGbEUd/Job-Tracking-design?node-id=1001-4&page-id=0%3A1&starting-point-node-id=1048%3A129&t=ETUPPNp1wfdE40ME-1' },
+    ]
+  },
+  {
     title: 'Augmented & Virtual Reality Experiences',
-    description: 'Created interactive AR and VR experiences in Unity where users can interact with 3D models in real-time. These projects showcase how immersive technology can create engaging user experiences.',
+    description: 'Created interactive AR and VR experiences in Unity where users can interact with 3D models in real-time.',
     tech: ['Unity Engine 6', 'XR ToolKits'],
     image: 'arvr.jpg',
     buttons: [
-      { label: 'View Demo', link: 'https://drive.google.com/drive/folders/1D4HcNHi6Wz0g37ye3d-UtGU-UCGbHm6I?usp=sharing' },
+      { label: 'View Demo', link: 'https://drive.google.com/file/d/1aIW2ENrZPnWJLTBtnNzcRlBu6ZjFwcMF/view?usp=drive_link' },
       { label: 'Case Study', link: 'AR VR report.pdf' }
     ]
   },
   {
-    title: 'Quick Save : VR Based Disaster Rescue and Preparedness Simulator',
-    description: 'Quick Save is a VR-based disaster rescue and preparedness simulator that allows users to experience emergency scenarios in an immersive virtual environment. It helps users learn rescue techniques, safety procedures, and decision-making skills during disaster situations.',
+    title: 'Quick Save : VR Simulator',
+    description: 'Quick Save is a VR-based disaster rescue and preparedness simulator that allows users to experience emergency scenarios in an immersive virtual environment.',
     tech: ['Unreal Engine 5.5', 'Meta XR Simulator', 'Blueprints'],
     image: 'VR.png',
     buttons: [
-      { label: 'Source File', link: 'https://drive.google.com/drive/folders/1ItSUdISG6GWYW-nPMiaB9jymUI0w7D1t?usp=drive_link' },
+      { label: 'Source File', link: 'https://drive.google.com/file/d/1saRxynpvr5AqZguZXxgskk-ic-1Cu55l/view?usp=drive_link' },
       { label: 'Case Study', link: 'Quick Save.pdf' }
     ]
   }
@@ -139,11 +150,17 @@ const Portfolio = () => {
   return (
     <div className="mainContainer">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       
       <header className="topBar">
-        <div className="wrapper">
+        <div className="wrapper headerWrapper">
+          <div className="brandLogo">
+            <span className="logoText">NAVEEN</span>
+          </div>
+          
           <nav className="navigationBar">
-            <div className="brandName">Naveen S</div>
             <ul className={`menuItems ${menuOpen ? 'active' : ''}`}>
               {navItems.map(item => (
                 <li key={item}>
@@ -160,44 +177,55 @@ const Portfolio = () => {
                 </li>
               ))}
             </ul>
+          </nav>
+
+          <div className="headerRight">
             <div className="toggleMenu" onClick={() => setMenuOpen(!menuOpen)}>
               <i className={`fas fa-${menuOpen ? 'times' : 'bars'}`}></i>
             </div>
-          </nav>
+          </div>
         </div>
       </header>
 
       <section id="home" className="heroSection">
-        <video autoPlay loop muted playsInline className="heroVideoBackground">
-          <source src="vid3.mp4" type="video/mp4" />
-        </video>
-        <div className="heroVideoOverlay"></div>
-
+        <div className="heroBackgroundLines"></div>
         <div className="wrapper heroContent">
-          <div className="heroText">
-            <h1>Hey, I'm <span className="accentColor">Naveen S</span></h1>
-            <h2>Full Stack Developer & Game Creator</h2>
-            <p>I build beautiful websites and exciting games that people actually find easy to use. My passion is turning creative ideas into real, working products that make a difference.</p>
-            <div className="actionButtons">
-              <a href="#contact" className="btn btnPrimary" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
-                <i className="fas fa-paper-plane"></i>Hire Me
-              </a>
-              <a href="#projects" className="btn btnSecondary" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>
-                <i className="fas fa-code"></i> See My Work
-              </a>
-            </div>
-            <div className="socialLinks">
-              <a href="https://www.linkedin.com/in/naveen-s-30092003ns/" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/Its-Naveen-Bro?tab=repositories" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-github"></i>
+          
+          <div className="heroLeft">
+            
+            <h1 className="heroTitle">
+              Hi, I'm <span className="textMaroon">Naveen S</span>
+            </h1>
+            
+            <p className="heroSubtitle">
+              I build beautiful websites and exciting games that people actually find easy to use. My passion is turning creative ideas into real, working products that make a difference.
+            </p>
+            
+            <div className="heroActionGroup">
+              <a href="#contact" className="btnSolidMaroonLarge" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
+                Hire Me <i className="fas fa-arrow-right"></i>
               </a>
             </div>
+
+            <div className="socialSection">
+              
+              <div className="socialLinks">
+                <a href="https://www.linkedin.com/in/naveen-s-30092003ns/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Its-Naveen-Bro?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i className="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+
           </div>
-          <div className="heroImage">
-            <div className="imageBorder">
-              <img src="img1.jpg" alt="Profile" className="profilePic" />
+          
+          <div className="heroRight">
+            <div className="verticalRays"></div>
+            <div className="imageGlow"></div>
+            <div className="heroImageWrapper">
+              <img src="img.png" alt="Profile" className="heroImage" />
             </div>
           </div>
         </div>
@@ -205,47 +233,72 @@ const Portfolio = () => {
 
       <section id="about" className="aboutSection">
         <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">About <span>Me</span></h2>
-          <div className="aboutContent">
-            <div className="aboutImageBox">
-              <div className="imageBorder">
-                <img src="342.jpg" alt="About" className="aboutPic" />
-              </div>
+          <div className="sectionHeader relativeCenter">
+            <h2 className="sectionTitle">About <span className="textMaroon">Me</span></h2>
+            <div className="titleLine"></div>
+          </div>
+          
+          <div className="aboutGrid">
+            <div className="aboutImageContainer">
+              <img src="342.jpg" alt="About" className="aboutPicSquare" />
             </div>
-            <div className="aboutText">
-              <h3>Full Stack Developer & Game Creator</h3>
-              <p>I am a passionate web and game developer who loves creating experiences that feel smooth and intuitive. My recent work includes THE UNSEEN, a thrilling survival horror game built in Unreal Engine 5, and a complete redesign of my college's ERP website to make it user-friendly. I am also diving into AR and VR, building immersive worlds and interactive web experiences that push boundaries.</p>
-               <a href="NAVEEN.S.pdf" className="btn btnSecondary">
-                <i className="fas fa-eye"></i>View Resume</a>
+            
+            <div className="aboutTextContent">
+              <h3 className="aboutHeading">Hi, I'm Naveen S</h3>
+              <h4 className="aboutSubHeading textMaroon">Full Stack Developer & Game Creator</h4>
+              
+              <p className="aboutDesc">
+                I build beautiful websites and exciting games that people actually find easy to use. My passion is turning creative ideas into real, working products that make a difference. My recent work includes thrilling survival horror games built in Unreal Engine 5 and complete redesigns of web applications to make them user-friendly.
+              </p>
+              
+              <ul className="aboutDetailsList">
+                <li><span className="detailLabel">Birthday</span><span className="detailValue">: September 30, 2003</span></li>
+                <li><span className="detailLabel">Phone</span><span className="detailValue">: +91 89257 35717</span></li>
+                <li><span className="detailLabel">Email</span><span className="detailValue">: naveenid30@gmail.com</span></li>
+                <li><span className="detailLabel">From</span><span className="detailValue">: Tirupattur District, Tamil Nadu</span></li>
+                <li><span className="detailLabel">Language</span><span className="detailValue">: English, Tamil</span></li>
+                <li><span className="detailLabel">Freelance</span><span className="detailValue">: Available</span></li>
+              </ul>
+
+              <a href="NAVEEN.S.pdf" className="btnSolidMaroonPill">
+                 Download CV
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="education" className="educationSection">
-        <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">My <span>Education</span></h2>
-          <div className="timelineBox">
-            {educationData.map((edu, index) => (
-              <div key={index} className="timelineStep">
-                <div className="timelineMark"></div>
-                <div className="timelineInfo">
-                  <h3>{edu.title}</h3>
-                  <h4>{edu.institution}</h4>
-                  <p>{edu.description}</p>
+      <section id="education" className="contentSection bgAlt">
+        <div className="wrapper" style={{maxWidth: '100%', padding: '0'}}>
+          <div className="sectionHeader center">
+            <h2 className="sectionTitle">My <span className="textMaroon">Education</span></h2>
+          </div>
+          
+          <div className="educationMarquee">
+            <div className="marqueeTrack">
+              {[...educationData, ...educationData].map((edu, index) => (
+                <div key={index} className="timelineCard horizontalCard">
+                  <div className="timelineIcon"><i className="fas fa-graduation-cap"></i></div>
+                  <div className="timelineContent">
+                    <h3 className="timelineTitle">{edu.title}</h3>
+                    <h4 className="timelineInst">{edu.institution}</h4>
+                    <p className="timelineDesc">{edu.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="skills" className="skillsSection">
+      <section id="skills" className="contentSection">
         <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">My <span>Skills</span></h2>
-          <div className="skillsDisplay">
+          <div className="sectionHeader center">
+            <h2 className="sectionTitle">Technical <span className="textMaroon">Skills</span></h2>
+          </div>
+          <div className="skillsGrid">
             {skillsData.map((skill, index) => (
-              <div key={index} className="skillBox">
+              <div key={index} className="skillCard">
                 <i className={skill.icon}></i>
                 <span>{skill.name}</span>
               </div>
@@ -254,27 +307,24 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section id="competitions" className="competitionsSection">
+      <section id="competitions" className="contentSection bgAlt">
         <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">Competitions & <span>Achievements</span></h2>
-          <div className="competitionsList">
-            {competitionsData.map((competition, index) => (
-              <div key={index} className="competitionCard">
-                <div className="competitionImageBox">
-                  <img src={competition.image} alt={competition.title} className="competitionImage" />
+          <div className="sectionHeader center">
+            <h2 className="sectionTitle">Competitions & <span className="textMaroon">Achievements</span></h2>
+          </div>
+          <div className="compsGrid">
+            {competitionsData.map((comp, index) => (
+              <div key={index} className="compCard">
+                <div className="compImageWrapper">
+                  <img src={comp.image} alt={comp.title} className="compImg" />
                 </div>
-                
-                <div className="competitionContent">
-                  <div className="competitionHeader">
-                    <h3>{competition.title}</h3>
-                  </div>
-                  <h4 className="competitionCategory">{competition.category}</h4>
-                  <p>{competition.description}</p>
-                  <div className="achievementsTags">
-                    {competition.achievements.map((achievement, i) => (
-                      <span key={i} className="achievementTag">
-                        <i className="fas fa-check-circle"></i>{achievement}
-                      </span>
+                <div className="compDetails">
+                  <h3 className="compTitle">{comp.title}</h3>
+                  <div className="compMeta">{comp.category} • {comp.year}</div>
+                  <p className="compDesc">{comp.description}</p>
+                  <div className="compTags">
+                    {comp.achievements.map((ach, i) => (
+                      <span key={i} className="compTag"><i className="fas fa-check"></i> {ach}</span>
                     ))}
                   </div>
                 </div>
@@ -284,27 +334,28 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section id="projects" className="projectsSection">
+      <section id="projects" className="contentSection">
         <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">My <span>Projects</span></h2>
-          <div className="projectsList">
+          <div className="sectionHeader center">
+            <h2 className="sectionTitle">Tech <span className="textMaroon">Projects</span></h2>
+          </div>
+          <div className="projectsGrid">
             {techProjectsData.map((project, index) => (
-              <div key={index} className="projectCard">
-                <div className="projectImage">
-                  <img src={project.image} alt={project.title} className="projectPic" />
+              <div key={index} className="projCard">
+                <div className="projImgWrapper">
+                  <img src={project.image} alt={project.title} className="projImg" />
                 </div>
-                <div className="projectDetails">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="techTags">
+                <div className="projInfo">
+                  <h3 className="projTitle">{project.title}</h3>
+                  <p className="projDesc">{project.description}</p>
+                  <div className="projTechs">
                     {project.tech.map((tech, i) => (
-                      <span key={i}>{tech}</span>
+                      <span key={i} className="projTech">{tech}</span>
                     ))}
                   </div>
-                  <div className="projectLinks">
+                  <div className="projActions">
                     {project.buttons.map((btn, i) => (
-                      <a key={i} href={btn.link} className="linkButton" title={btn.label}>
-                        {btn.icon && <i className={btn.icon}></i>}
+                      <a key={i} href={btn.link} className={i === 0 ? "btnSolidMaroonSmall" : "btnOutlineSmall"}>
                         {btn.label}
                       </a>
                     ))}
@@ -315,28 +366,29 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      
-      <section id="design-projects" className="projectsSection">
+
+      <section id="design-projects" className="contentSection bgAlt">
         <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">Design <span>Projects</span></h2>
-          <div className="projectsList">
+          <div className="sectionHeader center">
+            <h2 className="sectionTitle">Design & Game <span className="textMaroon">Projects</span></h2>
+          </div>
+          <div className="projectsGrid">
             {designProjectsData.map((project, index) => (
-              <div key={index} className="projectCard">
-                <div className="projectImage">
-                  <img src={project.image} alt={project.title} className="projectPic" />
+              <div key={index} className="projCard">
+                <div className="projImgWrapper">
+                  <img src={project.image} alt={project.title} className="projImg" />
                 </div>
-                <div className="projectDetails">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="techTags">
+                <div className="projInfo">
+                  <h3 className="projTitle">{project.title}</h3>
+                  <p className="projDesc">{project.description}</p>
+                  <div className="projTechs">
                     {project.tech.map((tech, i) => (
-                      <span key={i}>{tech}</span>
+                      <span key={i} className="projTech">{tech}</span>
                     ))}
                   </div>
-                  <div className="projectLinks">
+                  <div className="projActions">
                     {project.buttons.map((btn, i) => (
-                      <a key={i} href={btn.link} className="linkButton" title={btn.label}>
-                        {btn.icon && <i className={btn.icon}></i>}
+                      <a key={i} href={btn.link} className={i === 0 ? "btnSolidMaroonSmall" : "btnOutlineSmall"}>
                         {btn.label}
                       </a>
                     ))}
@@ -348,887 +400,39 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section id="contact" className="contactSection">
+      <section id="contact" className="contentSection">
         <div className="wrapper">
-          <h2 className="sectionTitle centerTitle">Get In <span>Touch</span></h2>
-          <div className="contactBox">
-            <div className="contactMethod">
-              <i className="fas fa-envelope"></i>
-              <div className="methodInfo">
-                <h3>Email</h3>
-                <a href="mailto:naveenid30@gmail.com">naveenid30@gmail.com</a>
-              </div>
+          <div className="sectionHeader center">
+            <h2 className="sectionTitle">Get In <span className="textMaroon">Touch</span></h2>
+          </div>
+          <div className="contactBoxes">
+            <div className="contactBox">
+              <div className="contactIcon"><i className="fas fa-envelope"></i></div>
+              <h3>Email</h3>
+              <a href="mailto:naveenid30@gmail.com">naveenid30@gmail.com</a>
             </div>
-            <div className="contactMethod">
-              <i className="fas fa-phone-alt"></i>
-              <div className="methodInfo">
-                <h3>Phone</h3>
-                <a href="tel:+918925735717">+91 89257 35717</a>
-              </div>
+            <div className="contactBox">
+              <div className="contactIcon"><i className="fas fa-phone-alt"></i></div>
+              <h3>Phone</h3>
+              <a href="tel:+918925735717">+91 89257 35717</a>
             </div>
-            <div className="contactMethod">
-              <i className="fas fa-map-marker-alt"></i>
-              <div className="methodInfo">
-                <h3>Location</h3>
-                <p>181/3, Elagiri, Jolarpettai, Tirupattur District - 635853, Tamil Nadu, India</p>
-              </div>
+            <div className="contactBox">
+              <div className="contactIcon"><i className="fas fa-map-marker-alt"></i></div>
+              <h3>Location</h3>
+              <p>Tirupattur District, Tamil Nadu</p>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="footerSection">
-        <div className="wrapper">
-          <a href="#home" className="scrollButton" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
-            <i className="fas fa-arrow-up"></i>
+      <footer className="mainFooter">
+        <div className="wrapper footerWrapper">
+          <div className="brandLogo"><span className="logoText">NAVEEN</span></div>
+          <a href="#home" className="scrollTop" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+            <i className="fas fa-chevron-up"></i>
           </a>
         </div>
-      </footer >
-
-      <style>{`
-        html, body {
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          overflow-x: hidden;
-        }
-
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        .mainContainer {
-          background: linear-gradient(135deg, #0d1117 0%, #1f2937 100%);
-          color: #e6edf3;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          position: relative;
-          width: 100%;
-          overflow-x: hidden;
-          display: block;
-          min-height: 100vh;
-        }
-
-        .wrapper {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-          position: relative;
-          z-index: 1;
-        }
-
-        .topBar {
-          position: fixed;
-          top: 0;
-          width: 100%;
-          background: rgba(13, 17, 23, 0.95);
-          backdrop-filter: blur(10px);
-          z-index: 1000;
-          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .navigationBar {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px 0;
-        }
-
-        .brandName {
-          font-size: 1.8rem;
-          font-weight: 700;
-          color: #00e5ff;
-        }
-
-        .menuItems {
-          display: flex;
-          list-style: none;
-          gap: 30px;
-        }
-
-        .menuItems a {
-          color: #e6edf3;
-          text-decoration: none;
-          font-weight: 500;
-          position: relative;
-          transition: color 0.3s;
-        }
-
-        .menuItems a::after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 2px;
-          background: #00e5ff;
-          bottom: -5px;
-          left: 0;
-          transition: width 0.3s;
-        }
-
-        .menuItems a:hover::after,
-        .menuItems a.active::after {
-          width: 100%;
-        }
-
-        .menuItems a:hover,
-        .menuItems a.active {
-          color: #00e5ff;
-        }
-
-        .toggleMenu {
-          display: none;
-          font-size: 1.5rem;
-          color: #e6edf3;
-          cursor: pointer;
-          z-index: 1001;
-        }
-
-        .heroSection {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          padding-top: 100px;
-          position: relative;
-          z-index: 1;
-          overflow: hidden;
-        }
-
-        .heroVideoBackground {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          min-width: 100%;
-          min-height: 100%;
-          width: auto;
-          height: auto;
-          z-index: -2;
-          transform: translate(-50%, -50%);
-          object-fit: cover;
-        }
-
-        .heroVideoOverlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(13, 17, 23, 0.7);
-          z-index: -1;
-        }
-
-        .heroContent {
-          display: flex;
-          align-items: center;
-          gap: 50px;
-        }
-
-        .heroText {
-          flex: 1;
-          animation: fadeIn 0.8s ease-in;
-        }
-
-        .heroText h1 {
-          font-size: 3rem;
-          margin-bottom: 10px;
-          line-height: 1.2;
-        }
-
-        .accentColor {
-          color: #00e5ff;
-        }
-
-        .heroText h2 {
-          font-size: 1.5rem;
-          color: #00e5ff;
-          margin-bottom: 20px;
-        }
-
-        .heroText p {
-          color: #8b949e;
-          margin-bottom: 30px;
-          line-height: 1.7;
-        }
-
-        .actionButtons {
-          display: flex;
-          gap: 15px;
-          margin-bottom: 20px;
-          flex-wrap: wrap;
-        }
-
-        .btn {
-          padding: 12px 25px;
-          border-radius: 8px;
-          font-weight: 600;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          transition: transform 0.3s, box-shadow 0.3s;
-          position: relative;
-          z-index: 2;
-          cursor: pointer;
-          border: none;
-          font-size: 1rem;
-        }
-
-        .btnPrimary {
-          background: #00e5ff;
-          color: #000;
-        }
-
-        .btnSecondary {
-          border: 2px solid #00e5ff;
-          color: #00e5ff;
-          background: transparent;
-        }
-
-        .btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
-        }
-
-        .socialLinks {
-          display: flex;
-          gap: 15px;
-        }
-
-        .socialLinks a {
-          color: #00e5ff;
-          font-size: 1.3rem;
-          transition: transform 0.3s;
-          position: relative;
-          z-index: 2;
-        }
-
-        .socialLinks a:hover {
-          transform: scale(1.2);
-        }
-
-        .heroImage {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          animation: fadeIn 0.8s ease-in 0.2s backwards;
-        }
-
-        .imageBorder {
-          width: 350px;
-          height: 350px;
-          border-radius: 20px;
-          overflow: hidden;
-          border: 3px solid #00e5ff;
-          box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
-        }
-
-        .profilePic {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .sectionTitle {
-          font-size: 2.5rem;
-          margin-bottom: 50px;
-          position: relative;
-          display: inline-block;
-        }
-
-        .centerTitle {
-          display: block;
-          text-align: center;
-          margin: 0 auto 50px;
-        }
-
-        .sectionTitle span {
-          color: #00e5ff;
-        }
-
-        .sectionTitle::after {
-          content: '';
-          position: absolute;
-          width: 50px;
-          height: 3px;
-          background: #00e5ff;
-          bottom: -10px;
-          left: 0;
-        }
-
-        .centerTitle::after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-
-        .aboutSection {
-          padding: 100px 0;
-          background: rgba(31, 41, 55, 0.2);
-          position: relative;
-          z-index: 1;
-        }
-
-        .aboutContent {
-          display: flex;
-          gap: 50px;
-          align-items: center;
-        }
-
-        .aboutImageBox {
-          flex: 0 0 40%;
-        }
-
-        .aboutPic {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .aboutText {
-          flex: 1;
-        }
-
-        .aboutText h3 {
-          font-size: 1.8rem;
-          color: #00e5ff;
-          margin-bottom: 20px;
-        }
-
-        .aboutText p {
-          color: #8b949e;
-          line-height: 1.8;
-        }
-
-        .educationSection {
-          padding: 100px 0;
-          position: relative;
-          z-index: 1;
-        }
-
-        .timelineBox {
-          position: relative;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        .timelineBox::before {
-          content: '';
-          position: absolute;
-          height: 100%;
-          width: 2px;
-          background: #00e5ff;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-
-        .timelineStep {
-          position: relative;
-          margin-bottom: 50px;
-        }
-
-        .timelineMark {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          background: #00e5ff;
-          border-radius: 50%;
-          top: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 2;
-        }
-
-        .timelineInfo {
-          width: calc(50% - 40px);
-          padding: 20px;
-          background: rgba(31, 41, 55, 0.6);
-          border-radius: 8px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .timelineStep:nth-child(odd) .timelineInfo {
-          margin-left: auto;
-        }
-
-        .timelineInfo h3 {
-          font-size: 1.3rem;
-          margin-bottom: 5px;
-        }
-
-        .timelineInfo h4 {
-          font-size: 1rem;
-          color: #00e5ff;
-          margin-bottom: 10px;
-        }
-
-        .timelineInfo p {
-          color: #8b949e;
-          line-height: 1.6;
-        }
-
-        .skillsSection {
-          padding: 100px 0;
-          background: rgba(31, 41, 55, 0.2);
-          position: relative;
-          z-index: 1;
-        }
-
-        .skillsDisplay {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 30px;
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-
-        .skillBox {
-          background: #1f1f1f;
-          padding: 30px;
-          border-radius: 12px;
-          text-align: center;
-          transition: transform 0.3s, background 0.3s;
-        }
-
-        .skillBox:hover {
-          transform: translateY(-10px);
-          background: #2a2a2a;
-        }
-
-        .skillBox i {
-          font-size: 40px;
-          color: #00e5ff;
-          margin-bottom: 15px;
-        }
-
-        .skillBox span {
-          display: block;
-          font-size: 16px;
-        }
-
-        .competitionsSection {
-          padding: 100px 0;
-          position: relative;
-          z-index: 1;
-        }
-
-        .competitionsList {
-          display: grid;
-          gap: 30px;
-          max-width: 900px;
-          margin: 0 auto;
-        }
-
-        .competitionCard {
-          display: flex;
-          gap: 30px;
-          background: rgba(31, 41, 55, 0.6);
-          padding: 40px;
-          border-radius: 12px;
-          border-left: 4px solid #00e5ff;
-          transition: transform 0.3s, box-shadow 0.3s;
-          align-items: flex-start;
-        }
-
-        .competitionCard:hover {
-          transform: translateX(10px);
-          box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
-        }
-
-        .competitionImageBox {
-          flex: 0 0 200px;
-          height: 200px;
-          border-radius: 12px;
-          overflow: hidden;
-          border: 3px solid #00e5ff;
-        }
-
-        .competitionImage {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .competitionContent {
-          flex: 1;
-        }
-
-        .competitionHeader {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 10px;
-          gap: 20px;
-        }
-
-        .competitionCard h3 {
-          font-size: 1.5rem;
-          color: #00e5ff;
-          margin: 0;
-        }
-
-        .competitionCategory {
-          font-size: 1rem;
-          color: #8b949e;
-          margin-bottom: 15px;
-          font-weight: 500;
-        }
-
-        .competitionContent p {
-          color: #8b949e;
-          line-height: 1.7;
-          margin-bottom: 20px;
-        }
-
-        .achievementsTags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 15px;
-        }
-
-        .achievementTag {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: #00e5ff;
-          background: rgba(0, 229, 255, 0.1);
-          padding: 8px 15px;
-          border-radius: 20px;
-          font-size: 0.9rem;
-        }
-
-        .achievementTag i {
-          font-size: 0.8rem;
-        }
-
-        .projectsSection {
-          padding: 100px 0;
-          position: relative;
-          z-index: 1;
-        }
-
-        .projectsList {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 30px;
-        }
-
-        .projectCard {
-          background: rgba(31, 41, 55, 0.6);
-          border-radius: 10px;
-          overflow: hidden;
-          transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .projectCard:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
-        }
-
-        .projectImage {
-          height: 200px;
-          background: #1f2937;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-
-        .projectPic {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .projectDetails {
-          padding: 25px;
-        }
-
-        .projectDetails h3 {
-          color: #00e5ff;
-          font-size: 1.4rem;
-          margin-bottom: 10px;
-        }
-
-        .projectDetails p {
-          color: #8b949e;
-          margin-bottom: 15px;
-          line-height: 1.6;
-        }
-
-        .techTags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-bottom: 20px;
-        }
-
-        .techTags span {
-          background: rgba(0, 229, 255, 0.1);
-          color: #00e5ff;
-          padding: 5px 12px;
-          border-radius: 20px;
-          font-size: 0.8rem;
-        }
-
-        .projectLinks {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-top: 15px;
-        }
-
-        .linkButton {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 8px 16px;
-          background: #00e5ff;
-          color: #000;
-          border: none;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 0.9rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .linkButton:hover {
-          background: #00bcd4;
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
-        }
-
-        .contactSection {
-          padding: 100px 0;
-          background: rgba(31, 41, 55, 0.2);
-          position: relative;
-          z-index: 1;
-        }
-
-        .contactBox {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
-          max-width: 900px;
-          margin: 0 auto;
-        }
-
-        .contactMethod {
-          text-align: center;
-          padding: 30px;
-          background: rgba(31, 41, 55, 0.6);
-          border-radius: 10px;
-          transition: transform 0.3s;
-        }
-
-        .contactMethod:hover {
-          transform: translateY(-5px);
-        }
-
-        .contactMethod i {
-          font-size: 2.5rem;
-          color: #00e5ff;
-          margin-bottom: 15px;
-        }
-
-        .methodInfo h3 {
-          margin-bottom: 10px;
-        }
-
-        .methodInfo a {
-          color: #00e5ff;
-          text-decoration: none;
-        }
-
-        .methodInfo p {
-          color: #8b949e;
-        }
-
-        .footerSection {
-          padding: 30px 0;
-          text-align: center;
-          background: #1f2937;
-          position: relative;
-          z-index: 1;
-        }
-
-        .scrollButton {
-          display: inline-block;
-          width: 50px;
-          height: 50px;
-          background: #00e5ff;
-          color: #000;
-          border-radius: 50%;
-          text-decoration: none;
-          line-height: 50px;
-          font-size: 1.2rem;
-          transition: transform 0.3s;
-          position: relative;
-          z-index: 2;
-        }
-
-        .scrollButton:hover {
-          transform: translateY(-5px);
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .toggleMenu {
-            display: block;
-          }
-
-          .menuItems {
-            position: fixed;
-            top: 80px;
-            left: -100%;
-            width: 100%;
-            height: calc(100vh - 80px);
-            background: #0d1117;
-            flex-direction: column;
-            padding-top: 40px;
-            transition: left 0.3s;
-            gap: 20px;
-            z-index: 999;
-          }
-
-          .menuItems.active {
-            left: 0;
-          }
-
-          .heroContent {
-            flex-direction: column-reverse;
-          }
-
-          .heroText h1 {
-            font-size: 2rem;
-          }
-
-          .heroText h2 {
-            font-size: 1.2rem;
-          }
-
-          .actionButtons {
-            flex-direction: column;
-          }
-
-          .aboutContent {
-            flex-direction: column;
-          }
-
-          .timelineBox::before {
-            left: 30px;
-          }
-
-          .timelineMark {
-            left: 30px;
-          }
-
-          .timelineInfo {
-            width: calc(100% - 70px);
-            margin-left: 70px !important;
-          }
-
-          .skillsDisplay {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          .competitionCard {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-          }
-
-          .competitionHeader {
-            flex-direction: column;
-            justify-content: center;
-          }
-
-          .achievementsTags {
-            justify-content: center;
-          }
-
-          .projectsList {
-            grid-template-columns: 1fr;
-          }
-
-          .contactBox {
-            grid-template-columns: 1fr;
-          }
-
-          .imageBorder {
-            width: 250px;
-            height: 250px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .brandName {
-            font-size: 1.4rem;
-          }
-
-          .menuItems {
-            gap: 10px;
-            padding-top: 30px;
-          }
-
-          .heroContent {
-            gap: 20px;
-          }
-
-          .heroText h1 {
-            font-size: 1.5rem;
-          }
-
-          .heroText h2 {
-            font-size: 1rem;
-          }
-
-          .actionButtons {
-            flex-direction: column;
-          }
-
-          .btn {
-            width: 100%;
-            justify-content: center;
-          }
-
-          .skillsDisplay {
-            grid-template-columns: 1fr;
-            gap: 20px;
-          }
-
-          .sectionTitle {
-            font-size: 2rem;
-          }
-
-          .competitionCard {
-            padding: 25px;
-          }
-
-          .competitionHeader {
-            flex-direction: column;
-          }
-
-          .contactMethod {
-            padding: 20px;
-          }
-
-          .imageBorder {
-            width: 250px;
-            height: 250px;
-          }
-        }
-      `}</style>
+      </footer>
     </div>
   );
 };
