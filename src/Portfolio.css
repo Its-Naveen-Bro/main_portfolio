@@ -1,5 +1,4 @@
 :root {
- 
   --color-bg-main: #121212; 
   --color-bg-alt: #1a1a1a;
   --color-bg-card: #222222;
@@ -59,7 +58,7 @@ body {
   background-color: var(--color-bg-alt);
 }
 
-
+/* TOP BAR & NAVIGATION */
 .topBar {
   position: fixed;
   top: 0;
@@ -135,6 +134,7 @@ body {
   color: var(--color-text-dark);
 }
 
+/* HERO SECTION */
 .heroSection {
   min-height: 100vh;
   display: flex;
@@ -181,7 +181,6 @@ body {
   margin-bottom: 25px;
   color: #ffffff; 
 }
-
 
 .heroTitle .textMaroon {
   white-space: nowrap; 
@@ -268,7 +267,7 @@ body {
   position: relative;
   height: 600px;
   display: flex;
-  justify-content: center; /* Keeps layout balanced */
+  justify-content: center;
   align-items: center;
 }
 
@@ -276,13 +275,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%; 
-  width: 550px; 
-  height: 550px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 65%); 
-  transform: translate(-35%, -50%); /* Shifts glow right to match image */
+  width: 600px; 
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 40%, transparent 70%); 
+  transform: translate(-35%, -50%); 
   z-index: 2;
   pointer-events: none;
-  filter: blur(45px); 
+  filter: blur(50px); 
+  mix-blend-mode: screen; 
 }
 
 .heroImageWrapper {
@@ -291,20 +291,19 @@ body {
   height: 100%;
   display: flex;
   align-items: flex-end;
-  transform: translateX(40px); /* Visually moves image to the right without breaking layout */
+  transform: translateX(40px);
 }
 
 .heroImage {
   max-height: 95%;
+  max-width: 100%;
   width: auto;
   object-fit: contain;
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
-/* -------------------------------------
-   OTHER SECTIONS (Dark Theme styling)
--------------------------------------- */
+/* GENERAL CONTENT SECTIONS */
 .contentSection {
   padding: 100px 0;
   position: relative;
@@ -753,7 +752,7 @@ body {
   background: var(--color-bg-alt);
 }
 
-
+/* CONTACT SECTION */
 .contactBoxes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -809,6 +808,7 @@ body {
   color: var(--color-primary);
 }
 
+/* FOOTER */
 .mainFooter {
   padding: 30px 0;
   border-top: 1px solid var(--color-border);
@@ -841,7 +841,7 @@ body {
   background: var(--color-primary);
 }
 
-
+/* MEDIA QUERIES */
 @media (max-width: 1024px) {
   .heroTitle {
     font-size: 3.5rem;
@@ -853,15 +853,14 @@ body {
 }
 
 @media (max-width: 992px) {
- 
   .heroSection {
-    background: linear-gradient(180deg, #111111 50%, var(--color-primary) 50.1%);
+    background: linear-gradient(180deg, #111111 65%, var(--color-primary) 65.1%);
   }
   
   .heroContent {
     flex-direction: column;
     text-align: center;
-    gap: 60px;
+    gap: 40px;
   }
   
   .heroLeft {
@@ -885,32 +884,30 @@ body {
   }
   
   .heroRight {
-    height: 400px;
+    height: 380px;
     width: 100%;
   }
 
- 
   .heroImageWrapper {
     transform: translateX(0); 
     justify-content: center;
     width: 100%;
+    height: 100%;
   }
 
- .imageGlow {
-  position: absolute;
-  top: 0%;
-  left: 0%; 
-  width: 600px; 
-  height: 600px;
- 
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 40%, transparent 70%); 
-  transform: translate(-35%, -50%); 
-  z-index: 2;
-  pointer-events: none;
-  filter: blur(50px); 
-  mix-blend-mode: screen; 
-}
-  
+  .imageGlow {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    width: 350px; 
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 40%, transparent 70%); 
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(35px); 
+    mix-blend-mode: screen; 
+  }
   
   .menuItems {
     position: absolute;
