@@ -134,9 +134,12 @@ body {
   color: var(--color-text-dark);
 }
 
-/* HERO SECTION - DESKTOP LAYOUT (FIXED BACK TO FULL SCREEN) */
+/* HERO SECTION - DESKTOP LAYOUT */
 .heroSection {
-  min-height: 100vh; /* Restored to full screen to fix the cutoff gap */
+  min-height: 600px;
+  height: 100vh;
+  /* THIS MAX-HEIGHT IS THE FIX: It stops mobile desktop-mode from creating a massive gap */
+  max-height: 800px; 
   display: flex;
   align-items: stretch;
   position: relative;
@@ -296,7 +299,7 @@ body {
 }
 
 .heroImage {
-  max-height: 85vh; /* Restored back to full height scaling */
+  max-height: 85vh; 
   max-width: 100%;
   width: auto;
   object-fit: contain;
@@ -861,7 +864,8 @@ body {
     background: linear-gradient(180deg, #111111 55%, var(--color-primary) 55.1%);
     padding-top: 100px;
     height: auto; 
-    min-height: 100vh; 
+    min-height: 100vh;
+    max-height: none; /* Removes the max-height limit on normal mobile view */
   }
   
   .heroContent {
