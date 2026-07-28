@@ -134,9 +134,9 @@ body {
   color: var(--color-text-dark);
 }
 
-/* HERO SECTION - DESKTOP LAYOUT */
+/* HERO SECTION - DESKTOP LAYOUT (FIXED BACK TO FULL SCREEN) */
 .heroSection {
-  min-height: 100vh;
+  min-height: 100vh; /* Restored to full screen to fix the cutoff gap */
   display: flex;
   align-items: stretch;
   position: relative;
@@ -296,7 +296,7 @@ body {
 }
 
 .heroImage {
-  max-height: 85vh;
+  max-height: 85vh; /* Restored back to full height scaling */
   max-width: 100%;
   width: auto;
   object-fit: contain;
@@ -845,7 +845,6 @@ body {
 
 /* MEDIA QUERIES */
 
-/* Tweaks for small laptops and large tablets */
 @media (max-width: 1024px) {
   .heroTitle {
     font-size: 3.5rem;
@@ -856,13 +855,13 @@ body {
   }
 }
 
-/* THIS IS THE FIX: Changed from 992px to 850px. 
-   This ensures "Desktop mode" (980px) gets the actual side-by-side desktop design! */
+/* MOBILE AND TABLET LAYOUT */
 @media (max-width: 850px) {
   .heroSection {
     background: linear-gradient(180deg, #111111 55%, var(--color-primary) 55.1%);
     padding-top: 100px;
-    min-height: 100vh;
+    height: auto; 
+    min-height: 100vh; 
   }
   
   .heroContent {
@@ -985,7 +984,6 @@ body {
   }
 }
 
-/* Adjustments for actual mobile phones */
 @media (max-width: 768px) {
   .projectsGrid {
     grid-template-columns: 1fr;
