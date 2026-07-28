@@ -134,7 +134,7 @@ body {
   color: var(--color-text-dark);
 }
 
-/* HERO SECTION */
+/* HERO SECTION - DESKTOP LAYOUT */
 .heroSection {
   min-height: 100vh;
   display: flex;
@@ -844,6 +844,8 @@ body {
 }
 
 /* MEDIA QUERIES */
+
+/* Tweaks for small laptops and large tablets */
 @media (max-width: 1024px) {
   .heroTitle {
     font-size: 3.5rem;
@@ -854,15 +856,21 @@ body {
   }
 }
 
-@media (max-width: 992px) {
+/* THIS IS THE FIX: Changed from 992px to 850px. 
+   This ensures "Desktop mode" (980px) gets the actual side-by-side desktop design! */
+@media (max-width: 850px) {
   .heroSection {
-    background: linear-gradient(180deg, #111111 65%, var(--color-primary) 65.1%);
+    background: linear-gradient(180deg, #111111 55%, var(--color-primary) 55.1%);
+    padding-top: 100px;
+    min-height: 100vh;
   }
   
   .heroContent {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 20px;
+    height: 100%;
+    justify-content: space-between;
   }
   
   .heroLeft {
@@ -870,6 +878,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2vh; 
   }
   
   .heroSubtitle {
@@ -886,8 +895,11 @@ body {
   }
   
   .heroRight {
-    height: 380px;
+    flex: 1;
     width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-end; 
   }
 
   .heroImageWrapper {
@@ -895,6 +907,10 @@ body {
     justify-content: center;
     width: 100%;
     height: 100%;
+  }
+
+  .heroImage {
+    max-height: 45vh; 
   }
 
   .imageGlow {
@@ -969,6 +985,7 @@ body {
   }
 }
 
+/* Adjustments for actual mobile phones */
 @media (max-width: 768px) {
   .projectsGrid {
     grid-template-columns: 1fr;
